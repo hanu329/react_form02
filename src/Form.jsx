@@ -66,16 +66,6 @@ export const Form = () => {
 
 
 
-{ 
-                    list.map((e) =>{
-                 return   <div >{e.id}. {e.name} {e.age} {e.address} {e.Department}
-                     {e.Salary} {e.Marital_Status} </div> 
-                     
-                     
-                    
-             
-            })    }  
-             
           <form action="" onSubmit={handleSubmit}>
               
            <input type="text" 
@@ -118,12 +108,30 @@ export const Form = () => {
          placeholder="submit" />
               
               </form> 
-
-
-
-            <div>
-                
-               
+            <div>                  
+            <table>
+                      <thead>
+                      <th>ID</th>
+                         <th>Name</th>
+                         <th>Age</th>
+                         <th>Address</th>
+                         <th>Department</th>
+                         <th>Salary</th>
+                         <th>Marital Status</th>
+                          </thead>                                          
+{ 
+         list.map((e) =>
+                     <tbody>
+                         <td>  {e.id}</td>
+                         <td>{e.name} </td>
+                         <td> {e.age}</td>
+                         <td>{e.address}</td>
+                         <td> {e.Department}</td>
+                         <td>{e.Salary}</td>
+                         <td> {e.Marital_Status}</td>
+                     </tbody>              
+             )  }  
+              </table>  
             </div>
         </div>
     )

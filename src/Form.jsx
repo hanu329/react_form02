@@ -52,7 +52,7 @@ export const Form = () => {
     useEffect(() =>{
         axios.get("http://localhost:3200/user").then(({data})=>{
            // console.log(data)
-          setlist([...list, data])
+          setlist(data)
         })
     },[])
 
@@ -60,8 +60,21 @@ export const Form = () => {
         <div>
 
          {
-             console.log(list[0])
+             console.log(list)
          }
+
+
+
+
+{ 
+                    list.map((e) =>{
+                 return   <div >{e.id}. {e.name} {e.age} {e.address} {e.Department}
+                     {e.Salary} {e.Marital_Status} </div> 
+                     
+                     
+                    
+             
+            })    }  
              
           <form action="" onSubmit={handleSubmit}>
               
@@ -108,19 +121,9 @@ export const Form = () => {
 
 
 
-            <div style={{
-                margin:30
-            }}>
+            <div>
                 
-                { 
-                    list[0].map((e) =>{
-                 return   <div>{e.id}. {e.name} {e.age} {e.address} {e.Department}
-                     {e.Salary} {e.Marital_Status} </div> 
-                     
-                     
-                    
-             
-            })    } 
+               
             </div>
         </div>
     )
